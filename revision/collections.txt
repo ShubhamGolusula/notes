@@ -1,0 +1,73 @@
+        1. Collection interface
+            add, remove,
+            addAll, removeAll,
+            size, isEmpty, clear,
+            contains, containsAll, retainALl
+            iterator
+
+        2. List interface
+            Insertion order/position is maintained
+            1. ArrayList
+            2. Vector(thread safe/synchronized methods)
+            3. LinkedList
+
+        3. Set interface
+            ==> SortedSet interface
+            ==> NavigableSet(navigation methods)
+            1. Hashset (unordered, unsorted, uses hashcode)
+            2. LinkedHashSet (ordered in insertion order, unsorted, uses hashcode)
+            3. TreeSet  (ordered, sorted in natural order, uses hashcode)
+
+        4. Map interface(does not extend collections interface)
+            ==> SortedMap interface
+            ==> Navigable Map
+            1. HashMap(unordered, unsorted, uses hashcode for keys, allows key with null value)
+            2. LinkedHashMap
+            3. TreeMap
+            4. HashTable(unordered, unsorted, but threadSafe/synchronized,
+                            uses hashcode for keys, doesn't allow key with null value)
+            5. ConcurrentHashMap
+
+        5. Queue interface
+            ==> DeQueue (can handle both ends of the queue)
+            ==> BlockingQueue (queue with wait feature, waits until an element is available)
+            1. PriorityQueue (sorted in natural order)
+            2. ArrayDeque (implements deque)
+            3. ArrayBlockingQueue (implements BlockingQueue with array)
+            4. LinkedBlockingQueue
+
+         Notes:
+        1. Hash at start ==> no order is maintained
+        2. Tree ==> elements are sorted in natural order
+        3. Set ==> no duplication
+        4. Linked ==> order is maintained
+        5. Comparator class used to sort elements in collections
+        6. Iterator class used to iterate elements in collections
+
+      Advanced Collections ==>
+
+        1. Post java 5 collections have new approach to synchronization. These collections are
+            called "concurrent collections"
+            Approaches used ==>
+            1. copy on write
+                * get methods have no synchronization/get methods are fast because no waiting happens
+                * used in observer scenarios where elements are not modified
+                Ex: CopyOnWriteArrayList class
+            2. compare and swap
+                * value before operation is cached and then compared,
+                if different operation is performed again
+                Ex: ConcurrentLinkedQueue class
+            3. locks
+                * can use lock and unlock and help concurrency
+                Ex: ReentrantLock (lock and unlock methods)
+
+        2. UnsupportedOperationException
+            Ex: Arrays.asList returns fixed size list. when we try to remove an element it throws
+                UnsupportedOperationException
+
+        3. ConcurrentModificationException
+
+        4. Atomic operations
+           * These operations are performed as single unit. Ex: Atomic integer
+
+        5. BlockingQueue
